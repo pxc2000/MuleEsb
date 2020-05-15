@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="saveJson" format="json">
+      <types:shape format="weave" example="examples/save.json"><![CDATA[%dw 2.0
+
+type saveJson = {|
+  id: String, 
+  name: String, 
+  age: Number {"typeId": "int"}
+|} {"example": "{\\\"id\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"age\\\":0}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#98619236-c80a-4d85-8866-409d3c9b46c0">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="saveJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="saveJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#5d865570-7dc3-47d6-afbf-b4278b9f32a7">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="saveJson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="saveJson"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

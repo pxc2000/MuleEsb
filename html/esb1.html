@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        function postJson(){
+            $.ajax({
+               url:'http://localhost:8090/esb1',
+               method:'post',
+               dataType:'json',
+               data:{
+                   id:'001',
+                   name:'sulidae',
+                   age:0
+               },
+                success:function(data){
+                   alert(data)
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <a href = "#" onclick="postJson()"> SaveEsb1 </a>
+</body>
+</html>
