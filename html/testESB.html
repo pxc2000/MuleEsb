@@ -10,7 +10,12 @@
                url:'http://localhost:8090/select',
                method:'post',
                dataType:'json',
+				crossDomain:true,
+				xhrFields: {
+      withCredentials: true
+   },
                data:{
+
                    id:'001',
                    name:'sulidae',
                    age:0

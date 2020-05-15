@@ -9,8 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="esb1Flow" doc:id="d8cbd908-b539-4a0e-9bdf-e90b18f414f9" >
 		<http:listener doc:name="Listener" doc:id="36b042ec-edff-40ef-b881-9b03504f3e99" config-ref="HTTP_Listener_config" path="/select" allowedMethods="POST"/>
-		<logger level="INFO" doc:name="Logger" doc:id="1270c8ba-121e-4c6e-8622-1574b091d50a" message="#[payload.name]"/>
-		<set-payload value='#["Hello! " + payload.name]' doc:name="Set Payload" doc:id="accc4236-6247-4df0-a3ee-3748385f13f9" />
-		<logger level="INFO" doc:name="Logger" doc:id="c40b409c-f086-443b-83e6-62cd6ab139c3" message="#[payload.name + attributes.requestPath]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1270c8ba-121e-4c6e-8622-1574b091d50a" message="#[payload]"/>
+		<set-payload value='#[payload]' doc:name="Set Payload" doc:id="accc4236-6247-4df0-a3ee-3748385f13f9" mimeType="application/json"/>
 	</flow>
 </mule>
